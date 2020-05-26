@@ -32,6 +32,7 @@ export default function Home(props) {
       setImageProfile(jwtdecode(localStorage.token).image);
     }
     getFriends(localStorage.token).then((response) => {
+      if(response.friendsData)
       setFriends(response.friendsData);
       setPosts(response.posts);
     });
